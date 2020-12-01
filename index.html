@@ -1,74 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css" />
 
     <title>Weather Dashboard</title>
 </head>
+
 <body>
-<!-- Here we create the navbar -->
+    <!-- Here we create the navbar -->
     <nav class="navbar navbar-dark bg-primary mb-3">
         <div class="container">
             <a href="#" class="navbar-brand">Weather Dashboard</a>
         </div>
     </nav>
 
-<!-- User will input their city they want to search the weather for -->
+    <!-- User will input their city they want to search the weather for -->
     <div class="container searchContainer">
+        <form id="form">
+            <div class="form-group">
+                <h1><label for="exampleFormControlInput1">Search for a City:</label></h1>
+                <p class="lead">Enter Your Location and Press Enter</p>
+                <input type="text" class="form-control" id="city-input" autocomplete="off" placeholder="">
+            </div>
+        </form>
+    </div>
+    <div class="container" id="main-container">
+        <div class="row" id="main-row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                <div class="button-div"></div>
+            </div>
 
-
-        <div class="search card card-body">
-            <h1>Search for a city</h1>
-            <p class="lead">Enter Your Location</p>
-            <input type="text" id="city-input" class="form-control" placeholder="Location">
+            <div id="weather-info" id="main-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+                    <div class="city-div">
+                        <p id="icon" class="icon"></p>
+                        <p id="city-title"></p>
+                        <p id="temperature"></p>
+                        <p id="wind-speed"></p>
+                        <p id="UV-index" class="badge"></p>
+                    </div>
+                    <div class="forecast-div">
+                        <div class="forecast-box" id="box1">
+                            <p id="date1"></p>
+                        </div>
+                        <div class="forecast-box" id="box2">
+                            <p id="date2"></p>
+                        </div>
+                        <div class="forecast-box" id="box3">
+                            <p id="date3"></p>
+                        </div>
+                        <div class="forecast-box" id="box4">
+                            <p id="date4"></p>
+                        </div>
+                        <div class="forecast-box" id="box5">
+                            <p id="date5"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br>
-        <div id="profile"></div>
     </div>
 
 
-    <div class="container text-center mt-2">
-        <input id="find-city" type="submit" value="City Search">
-    </div>
-    
-    <!-- JSON contents will be here -->
-    <div id="weather-info">
-
-    </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-// This will trigger the button for the AJAX call
-$("#find-city").on("click", function(event) {
-
-    event.preventDefault();
-
-    var city = $("#city-input").val();
-})
-
-// This is my API key
-var APIKey = "19bcc46bc01abc48db8fb76d221df7e0";
-
-
-// This is the URL to query the database    
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=" APIKey;
-
-// This code will take the response data from the user input
-$.ajax({
-          url: queryURL,
-          method: "GET"
-        }).then(function(response) {
-            var mainWeather = $("#weather-info").text(response.weather[0].main);
-        //   $("#weather-info").text(JSON.stringify(response));
-        });
-
-
-    
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
-

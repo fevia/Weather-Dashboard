@@ -1,12 +1,117 @@
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body{
     height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
+#main-container {
+    background-color: rgba(230, 230, 230, 0.692);
+    width: 75%;
+    min-width: 500px;
+    height: 600px;
+    margin: 3% auto;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.568);
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(219, 219, 219);
+    border-radius: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.137);
+}
+
+#main-row {
+    background-color: rgba(255, 0, 0, 0);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 18px;
+    height: 450px;
+}
+
+.btn {
+    margin: 1px auto;
+    width: 100%;
+    border: none;
+    background-color: rgba(25, 182, 156, 0.637);
+    border-radius: 20px;
+}
+
+.btn:hover {
+    letter-spacing: 2px;
+    transition: .5s;
+}
+
+.city-div {
+    border: 1px solid rgba(112, 112, 112, 0.315);
+    background-color: rgba(255, 255, 255, 0.295);
+    margin: 15px;
+    height: 200px;
+    float: left;    
+    width: 90%;
+    border-radius: 10px;
+    padding: 15px 25px;
+    line-height: 12px;
+}
+
+.city-div:hover {
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.377);
+    transition: .2s;
+    background-color: rgba(255, 255, 255, 0.596);
+}
+
+.forecast-div {
+    border: 1px solid rgba(112, 112, 112, 0.315);
+    background-color: rgba(255, 255, 255, 0.295);
+    margin: 15px;
+    height: 200px;
+    float: left;    
+    width: 90%;
+    padding: 40px auto 0 auto;
+    border-radius: 10px;
+    display: flex;
+    align-content: center;
+}
+
+.forecast-div:hover {
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.377);
+    transition: .2s;
+    background-color: rgba(255, 255, 255, 0.418);
+}
+
+#city-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.forecast-box {
+    width: 120px;
+    height: 140px;
+    background-color: rgb(230, 230, 230);
+    float: left;
+    border: 1px solid rgba(112, 112, 112, 0.315);
+    margin: 15px 1% 0px 1%;
+    border-radius: 10px;
+    padding: 0 4px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 833px) {
+    .forecast-box {
+        width: 70px;
+        height: 140px;
+        margin: 10px auto;
+    }
+
+    #main-container{
+        height: 833px;
+        
+    }
+
+  }
