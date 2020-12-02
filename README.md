@@ -14,4 +14,4 @@ The weather is always considered when travelling anywhere around the world or ev
 * [Github](https://github.com/)
 
 ## Deployed Link
-[Weather Dashboard](https://fevia.github.io/weather-dashboard/)
+[Weather Dashboard](https://fevia.github.io/Weather-Dashboard/)
